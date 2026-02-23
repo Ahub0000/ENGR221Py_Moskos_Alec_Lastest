@@ -1,0 +1,6 @@
+[
+  "sorting_tests.py::test_bubble_sort",
+  "sorting_tests.py::test_init_array_len",
+  "sorting_tests.py::test_insertion_sort",
+  "sorting_tests.py::test_insertion_sort_inplace"
+]
