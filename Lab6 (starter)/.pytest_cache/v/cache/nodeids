@@ -1,0 +1,6 @@
+[
+  "tests/walker_tests.py::test_rwstepsLoop",
+  "tests/walker_tests.py::test_rwstepsLoop_hi",
+  "tests/walker_tests.py::test_rwstepsLoop_low",
+  "tests/walker_tests.py::test_rwstepsLoop_out"
+]
