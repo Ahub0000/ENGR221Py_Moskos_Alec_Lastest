@@ -1,0 +1,19 @@
+{
+  "hashmap_tests.py::test_put_into_empty": true,
+  "hashmap_tests.py::test_put_nonempty_no_resize": true,
+  "hashmap_tests.py::test_put_triggers_resize": true,
+  "hashmap_tests.py::test_put_duplicate_key": true,
+  "hashmap_tests.py::test_replace_existing_key": true,
+  "hashmap_tests.py::test_replace_missing_key": true,
+  "hashmap_tests.py::test_set_existing_key": true,
+  "hashmap_tests.py::test_set_new_key": true,
+  "hashmap_tests.py::test_get_existing_key": true,
+  "hashmap_tests.py::test_size_empty": true,
+  "hashmap_tests.py::test_size_few_empty": true,
+  "hashmap_tests.py::test_isEmpty_empty": true,
+  "hashmap_tests.py::test_isEmpty_nonempty": true,
+  "hashmap_tests.py::test_containsKey_exists": true,
+  "hashmap_tests.py::test_containsKey_missing": true,
+  "hashmap_tests.py::test_keys_empty": true,
+  "hashmap_tests.py::test_keys_nonempty": true
+}
