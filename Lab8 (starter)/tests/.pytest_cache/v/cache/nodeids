@@ -1,0 +1,18 @@
+[
+  "bst_tests.py::test_bst_delete",
+  "bst_tests.py::test_bst_delete_child",
+  "bst_tests.py::test_bst_delete_children",
+  "bst_tests.py::test_bst_delete_leaf",
+  "bst_tests.py::test_bst_delete_stick",
+  "bst_tests.py::test_bst_findSuccessor",
+  "bst_tests.py::test_bst_getRoot_empty",
+  "bst_tests.py::test_bst_getRoot_nonempty",
+  "bst_tests.py::test_bst_isempty_false",
+  "bst_tests.py::test_bst_isempty_true",
+  "bst_tests.py::test_bst_lookup_present",
+  "bst_tests.py::test_bst_search_absent",
+  "bst_tests.py::test_bst_search_empty",
+  "bst_tests.py::test_bst_search_nonempty",
+  "bst_tests.py::test_bst_search_present",
+  "bst_tests.py::test_bst_traverse"
+]
