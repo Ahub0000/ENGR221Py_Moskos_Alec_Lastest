@@ -27,6 +27,7 @@ class Controller():
         self.__display = BoardDisplay()
         # How many frames have passed
         self.__numCycles = 0
+        self.__score = 0
 
         # Attempt to load any sounds and images
         try:
@@ -131,6 +132,8 @@ class Controller():
         # If we eat food, update the state of the board
         elif nextCell.isFood():
             self.playSound_eat()
+            self.__score += 1     #added a scoreboard for lab10
+            print("Score:", self.__score) #added a scoreboard for lab10
             self.__data.foodEaten(nextCell)
             self.__data.addSnakeHead(nextCell)
 
@@ -162,24 +165,36 @@ class Controller():
         cellsToSearch.put(head)
 
         # Search!
-        # TODO implement BFS here
+        while not cellsToSearch.empty():
+            current = cellsToSearch.get()
 
+            if current.isFood():
+                return self.getFirstCellInPath(current)
+            
+            neighbors = self.__data.getNeighbors(current)
+
+            for neighbor in neighbors:
+                if not neighbor.alreadyAddedToSearchList():
+                    if not neighbor.isWall() and not neighbor.isBody():
+                        neighbor.setAddedToSearchList()
+                        neighbor.setParent(current)
+                        cellsToSearch.put(neighbor)
+        
         # If the search failed, return a random neighbor
         return self.__data.getRandomNeighbor(head)
 
     def getFirstCellInPath(self, foodCell):
-        """ TODO COMMENT HERE """
+        """ Return the first step from the head toward the food cell """
 
-        # TODO
-        
+        current = foodCell
+
+        while current.getParent() != self.__data.getSnakeHead():
+            current = current.getParent()
+
         return foodCell
     
     def reverseSnake(self):
-        """ TODO COMMENT HERE """
-
-        # TODO
-
-        pass
+        self.__data.reverseSnake()
 
     def playSound_eat(self):
         """ Plays an eating sound """

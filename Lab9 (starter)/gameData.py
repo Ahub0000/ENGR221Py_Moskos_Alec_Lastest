@@ -281,7 +281,39 @@ class GameData:
     # Helper method(s) for reverse #
     ################################
     
-    # TODO Write method(s) here to help reverse the snake
+    def reverseSnake(self):
+        """reverse the snake so the tail becomes the new head"""
+        
+        # Old head becomes new
+        oldHead = self.getSnakeHead()
+        oldHead.becomeBody()
+
+        #Reverse the list so tail becomes head
+        self.__snakeCells.reverse()
+
+        #New first cell becomes head
+        newHead = self.getSnakeHead()
+        newHead.becomeHead()
+
+        #Update direction
+        self.updateDirectionAfterReverse()
+
+    def updateDirectionAfterReverse(self):
+
+        head = self.getSnakeHead()
+        neck = self.getSnakeNeck()
+
+        if head.getRow() < neck.getRow():
+            self.setDirectionNorth()
+        
+        elif head.getRow() > neck.getRow():
+            self.setDirectionSouth()
+        
+        elif head.getCol() < neck.getCol():
+            self.setDirectionWest()
+        
+        elif head.getCol() > neck.getCol():
+            self.setDirectionEast()
 
     # Steps:
     #  - Unlabel the head
